@@ -62,6 +62,7 @@ def get_annual_max(d):
                 max_month = month
     
         max_vals.append((year, max_month, max_val))
+    return max_vals
 
 
 def get_month_avg(d):
@@ -82,6 +83,11 @@ def get_month_avg(d):
         count = 0
 
         for month in d[year]:
+            value = int(month)
+            total += value
+            count +=1
+        avgs[year] = round(total/count)
+    return avgs
 
 
 class dis7_test(unittest.TestCase):
